@@ -32,4 +32,4 @@ def generator(collection, host):
             vids = soup.findAll(attrs={'class':'yt-uix-tile-link'})
             #return first link/href value of it
             data = 'https://www.youtube.com/embed/' + vids[0]['href'][9:]
-            return str("<iframe title=\"YouTube video player\" class=\"youtube-player\" type=\"text/html\" width=\"640\" height=\"390\" src=\"%s\" frameborder=\"0\" allowFullScreen></iframe>" %data)
+            return str("You got: %s <br><iframe class=\"youtube-player\" type=\"text/html\" width=\"640\" height=\"390\" src=\"%s\" frameborder=\"0\" allowFullScreen></iframe>" %(result[0]['Name'], data))
