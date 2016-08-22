@@ -3,7 +3,7 @@ os: linux
 files:
   - source: nginx/sites-default
     destination: /etc/nginx/sites-available/default
-  - source: source
+  - source: www
     destination: /data
 hooks:
   ApplicationStop:
@@ -12,4 +12,4 @@ hooks:
     - location: scripts/packages.sh
   ApplicationStart:
     - location: scripts/start.sh
-      timeout: 3600
+      timeout: 10
