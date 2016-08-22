@@ -10,6 +10,8 @@ hooks:
     - location: scripts/stop.sh
   BeforeInstall:
     - location: scripts/packages.sh
+  AfterInstall:
+    - location: scripts/symlink.sh
   ApplicationStart:
     - location: scripts/start.sh
       timeout: 10
