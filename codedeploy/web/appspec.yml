@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: nginx/sites-default
-    destination: /etc/nginx/sites-available/default
+  - source: nginx
+    destination: /etc/nginx/sites-available
   - source: www
     destination: /data
 hooks:
