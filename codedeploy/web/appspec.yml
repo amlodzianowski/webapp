@@ -7,8 +7,7 @@ files:
     destination: /data
 hooks:
   BeforeInstall:
-    - location: Scripts/UnzipResourceBundle.sh
-    - location: Scripts/UnzipDataBundle.sh
+    - location: scripts/packages.sh
   AfterInstall:
     - location: Scripts/RunResourceTests.sh
       timeout: 180
