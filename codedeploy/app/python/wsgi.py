@@ -1,3 +1,5 @@
+import sys
+sys.path.append("/data")
 from generator import generator
 
 def application(env, start_response):

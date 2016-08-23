@@ -1,5 +1,5 @@
 upstream app {
-    server 10.252.1.208:80;
+    server app.adrian-training.aws.logicworks.net:8000;
 }
 server {
         listen 80;
