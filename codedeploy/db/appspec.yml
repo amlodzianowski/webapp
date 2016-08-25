@@ -1,21 +1,17 @@
 version: 0.0
 os: linux
 files:
-  - source: nginx/sites-default
-    destination: /etc/nginx/sites-enabled/default
-  - source: source
+  - source: nginx
+    destination: /etc/nginx/sites-available
+  - source: www
     destination: /data
 hooks:
+  ApplicationStop:
+    - location: scripts/stop.sh
   BeforeInstall:
-    - location: Scripts/UnzipResourceBundle.sh
-    - location: Scripts/UnzipDataBundle.sh
+    - location: scripts/packages.sh
   AfterInstall:
-    - location: Scripts/RunResourceTests.sh
-      timeout: 180
+    - location: scripts/gen-json.sh
   ApplicationStart:
-    - location: Scripts/RunFunctionalTests.sh
-      timeout: 3600
-  ValidateService:
-    - location: Scripts/MonitorService.sh
-      timeout: 3600
-      runas: codedeployuser
+    - location: scripts/start.sh
+      timeout: 10
