@@ -40,7 +40,7 @@ Canderous Ordo
 Captain Raymus Antilles
 Captain Colton
 Captain Godherdt
-Captain "Jag" Jai'Galaar
+Captain Jag Jai'Galaar
 Captain Khurgee
 Captain Lennox
 Captain Lorth Needa
@@ -90,7 +90,7 @@ Death Star Gunners
 Del Goren
 Delva Racine
 Dengar
-Derek "Hobbie" Klivian
+Derek Hobbie Klivian
 Diskret Stahn
 Doallyn
 Dr. Evazan
