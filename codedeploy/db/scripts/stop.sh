@@ -1,2 +1,2 @@
 #!/bin/bash
-service nginx mongodb
+service mongodb stop
