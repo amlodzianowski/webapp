@@ -11,7 +11,7 @@ hooks:
   BeforeInstall:
     - location: scripts/packages.sh
   AfterInstall:
-    - location: scripts/gen-json.sh
+    - location: scripts/gen_json.sh
   ApplicationStart:
     - location: scripts/start.sh
       timeout: 10
