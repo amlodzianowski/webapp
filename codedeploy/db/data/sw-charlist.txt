@@ -17,7 +17,7 @@ Arleil Schous
 Attichitcuk
 Aurra Sing
 Ayy Vida
-Bairdon Jace 
+Bairdon Jace
 Baniss Keeg
 Barada
 Bene
@@ -35,9 +35,9 @@ Boushh
 Brainiac
 Brea & Senni Tonnika
 C-3PO
-Camie Loneozner 
+Camie Loneozner
 Canderous Ordo
-Captain Raymus Antilles 
+Captain Raymus Antilles
 Captain Colton
 Captain Godherdt
 Captain "Jag" Jai'Galaar
@@ -45,7 +45,7 @@ Captain Khurgee
 Captain Lennox
 Captain Lorth Needa
 Captain Panaka
-Captain Sarkli 
+Captain Sarkli
 Captain Tarpals
 Captain Verrack
 Captain Yorr
@@ -61,7 +61,7 @@ Coleman Kcaj
 Colonel Feyn Gospic
 Colonel Wullf Yularen
 Commander Appo
-Commander Bacara 
+Commander Bacara
 Commander Bly
 Commander Cody
 Commander Daine Jir
@@ -69,20 +69,20 @@ Commander Deviss
 Commander Faie
 Commander Gree
 Commander Keller
-Commander Neyo 
+Commander Neyo
 Commander Odd Ball
 Commander Praji
 Commander Thire
-Corporal Derdram 
+Corporal Derdram
 Count Dooku/Darth Tyranus
 Dack Ralter
-Dansra Beezer 
+Dansra Beezer
 Dark Trooper-Phase I
 Dark Trooper-Phase II
-Dark Trooper-Phase III 
+Dark Trooper-Phase III
 Darth Bandon
 Darth Malak
-Darth Maul 
+Darth Maul
 Darth Vader
 Dathcha
 Daultay Dofine
@@ -94,9 +94,9 @@ Derek "Hobbie" Klivian
 Diskret Stahn
 Doallyn
 Dr. Evazan
-Duke Teta 
+Duke Teta
 E4 Baron Droid
-E522 Assassin Droid 
+E522 Assassin Droid
 EG-4
 Elyhek Rue
 Emperor Palpatine/
@@ -108,7 +108,7 @@ FIII Footman Droid
 Fi-Ek Sirch
 Figrin Da'n
 G8-R3
-Gailid 
+Gailid
 Garindan
 General Carlist Rieekan
 General Crix Madine
@@ -125,7 +125,7 @@ Han Solo
 Hat Lo
 Hela Brandes
 HK-47
-Hol Okand 
+Hol Okand
 Hugo Eckener
 IG-88
 Imperial Royal Guard
@@ -134,16 +134,16 @@ Jango Fett
 Jar Jar Binks
 Jek Porkins
 John D. Branon
-Jon Vander 
-J'oopi Shé 
+Jon Vander
+J'oopi Shé
 Juhani
 K-3PO
 Kabe
-Kai Hudorra 
+Kai Hudorra
 Karoly D'ulin
 Khaat Qiyn
 Knol Ven'nari
-Koth Melan 
+Koth Melan
 Koyi Mateil
 Kylo Ren
 Labria
@@ -157,16 +157,16 @@ Lieutenant Shann Childsen
 Lobot
 Lufta Shif
 Luke Skywalker
-Lumas Etima 
+Lumas Etima
 Lumpawarrump
 Lunae Minx
 Mace Windu
-Major Panno 
+Major Panno
 Mallatobuck
 Mara Jade
-Mark I Assault Droid 
-Master-Com 
-Meeko Ghintee 
+Mark I Assault Droid
+Master-Com
+Meeko Ghintee
 Mission Vao
 Momaw Nadon
 Mon Mothma
@@ -177,14 +177,14 @@ Nien Nunb
 Nute Gunray
 Obi-Wan Kenobi
 OOM-9
-Owen Lars 
+Owen Lars
 Padmé Amidala
 Plo Koon
 Ponda Baba
 Princess Leia Organa (Solo)
-QT-QC 
+QT-QC
 Queen Apailana
-Qui-Gon Jinn 
+Qui-Gon Jinn
 R-3PO
 R2-A5
 R2-A6
@@ -192,8 +192,8 @@ R2-B1
 R2-C4
 R2-D2
 R2-KT
-R2-L3 
-R2-M5 
+R2-L3
+R2-M5
 R2-Q2
 R2-Q5
 R2-R9
@@ -203,7 +203,7 @@ R3-A2
 R3-T2
 R3-T6
 R3-T7
-R4-A22 
+R4-A22
 R4-E1
 R4-F5
 R4-H5
@@ -215,7 +215,7 @@ R4-M9
 R5-D4
 R5-J2
 R5-M2
-R5-X2 
+R5-X2
 RHTC-560 Hunter Trainer
 Rune Haako
 Ryle Torsyn
@@ -224,7 +224,7 @@ Sandtrooper
 Sarrissa Jeng
 Sayar Dun'La
 Scout Trooper
-Sel Maa 
+Sel Maa
 Sergeant Fox
 Shada D'ukal
 Sheltay Retrac
@@ -238,7 +238,7 @@ Swamptrooper
 Valorum
 T3-M4
 TC-14
-Tarados Gon 
+Tarados Gon
 Tas Kee
 Tessek
 Tundra Dowmeia
@@ -248,9 +248,8 @@ Uutkik
 Vizam
 Watto
 Wedge Antillies
-Whie Malreaux 
+Whie Malreaux
 Yarna D'al Gargan
 Yerka Mig
 Yoda
 Zaalbar
-

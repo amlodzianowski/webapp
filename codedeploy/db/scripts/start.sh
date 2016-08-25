@@ -7,7 +7,7 @@ then
 else
   service $SERVICE start
 fi
-
+sleep 2;
 /usr/bin/mongo $DBNAME --eval "db.dropDatabase()"
 /usr/bin/mongoimport --db chars --collection southpark < /data/sp-charlist.json
 /usr/bin/mongoimport --db chars --collection starwars < /data/sw-charlist.json
