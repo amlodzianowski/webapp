@@ -1,9 +1,9 @@
 version: 0.0
 os: linux
 files:
-  - source: nginx
-    destination: /etc/nginx/sites-available
-  - source: www
+  - source: mongo
+    destination: /etc/
+  - source: data
     destination: /data
 hooks:
   ApplicationStop:
