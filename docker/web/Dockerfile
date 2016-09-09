@@ -12,10 +12,10 @@ RUN rm /etc/nginx/sites-available/default
 RUN mkdir /data
 
 # Copies content of the www directory to /data
-COPY www/* /data
+COPY www/* /data/
 
 # Copies content of the nginx directory to /etc/nginx/sites-available
-COPY nginx/* /etc/nginx/sites-available
+COPY nginx/* /etc/nginx/sites-available/
 
 # Creates a symlink to sites-default
 RUN ln -s /etc/nginx/sites-available/sites-default /etc/nginx/sites-enabled/sites-default
