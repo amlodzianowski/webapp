@@ -25,5 +25,5 @@ RUN /data/mongo-script.sh /data/sw-charlist.txt > /data/sw-charlist.json
 RUN service mongodb start
 
 # Populate database with pre-created json files
-RUN /usr/bin/mongoimport --db chars --collection southpark < /data/sp-charlist.json
-RUN /usr/bin/mongoimport --db chars --collection starwars < /data/sw-charlist.json
+RUN service mongodb start; /usr/bin/mongoimport -port 28017 --db chars --collection southpark < /data/sp-charlist.json
+RUN service mongodb start; /usr/bin/mongoimport -port 28017 --db chars --collection starwars < /data/sw-charlist.json
