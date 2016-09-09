@@ -9,7 +9,7 @@ from optparse import OptionParser
 
 def generator(collection, host):
             #initiate a connection to MongoDB and use the "chars" database
-            client = MongoClient(host, 27017)
+            client = MongoClient(host, 28017)
             db = client.chars
             #get all entries from the db and count them
             limit = getattr(db, collection).find()
