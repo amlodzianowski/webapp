@@ -1,0 +1,15 @@
+upstream app {
+    server app.adrian-training.aws.logicworks.net:8000;
+}
+server {
+        listen 80;
+
+        location / {
+            root   /data;
+            index  index.html;
+        }
+
+        location /youtube {
+                uwsgi_pass app;
+        }
+}
