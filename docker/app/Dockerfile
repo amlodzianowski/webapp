@@ -3,10 +3,8 @@ MAINTAINER Adrian Mlodzianowski
 
 # Install dependencies
 RUN apt-get update -y
-RUN apt-get install -y python-pip
-RUN pip install pymongo
-RUN pip install uwsgi
-RUN pip install bs4
+RUN apt-get install -y python-pip uwsgi uwsgi-plugin-python
+RUN pip install pymongo bs4
 
 # Create directory for all files
 RUN mkdir /data
