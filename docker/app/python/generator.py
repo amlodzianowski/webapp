@@ -7,9 +7,9 @@ from bs4 import BeautifulSoup
 from pymongo import MongoClient
 from optparse import OptionParser
 
-def generator(collection, host):
+def generator(collection, host, port):
             #initiate a connection to MongoDB and use the "chars" database
-            client = MongoClient(host, 28017)
+            client = MongoClient(host, port)
             db = client.chars
             #get all entries from the db and count them
             limit = getattr(db, collection).find()
