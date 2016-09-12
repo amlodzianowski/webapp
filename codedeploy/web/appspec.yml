@@ -12,7 +12,6 @@ hooks:
     - location: scripts/packages.sh
   AfterInstall:
     - location: scripts/symlink.sh
-    - location: scripts/info.py
   ApplicationStart:
     - location: scripts/start.sh
       timeout: 10
