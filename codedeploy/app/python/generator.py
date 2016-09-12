@@ -13,7 +13,10 @@ def generator(collection, host):
             db = client.chars
             #get all entries from the db and count them
             limit = getattr(db, collection).find()
-            limit_count = limit.count()
+            try:
+                limit_count = limit.count()
+            except:
+                return str("Can't connect to database")
             #based on the amount of entries in the db, create a random number
             random_id = random.randrange(0,limit_count)
             #query db for an entry with the ID of the random number
