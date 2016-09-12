@@ -21,8 +21,10 @@ RUN /bin/chmod ugo+x /data/mongo-script.sh
 RUN /data/mongo-script.sh /data/sp-charlist.txt > /data/sp-charlist.json
 RUN /data/mongo-script.sh /data/sw-charlist.txt > /data/sw-charlist.json
 
+RUN service mongodb start;
+
 # Populate database with pre-created json files
-RUN service mongodb start; sleep 1; /usr/bin/mongoimport --db chars --collection southpark < /data/sp-charlist.json
-RUN service mongodb start; sleep 1; /usr/bin/mongoimport --db chars --collection starwars < /data/sw-charlist.json
+RUN service mongodb start; sleep 15; /usr/bin/mongoimport --db chars --collection southpark < /data/sp-charlist.json;sleep 10
+RUN service mongodb start; sleep 15; /usr/bin/mongoimport --db chars --collection starwars < /data/sw-charlist.json;sleep 10
 
 EXPOSE 27017
