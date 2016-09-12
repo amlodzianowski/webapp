@@ -1,6 +1,10 @@
 upstream app {
     server app.adrian-training.aws.logicworks.net:18000;
 }
+
+upstream local {
+    server localhost:16000;
+}
 server {
         listen 80;
 
@@ -11,5 +15,9 @@ server {
 
         location /youtube {
                 uwsgi_pass app;
+        }
+
+        location /info {
+                uwsgi_pass local;
         }
 }

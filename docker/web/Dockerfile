@@ -14,6 +14,9 @@ RUN mkdir /data
 # Copies content of the www directory to /data
 COPY www/* /data/
 
+# Copies content of the wsgi directory to /data
+COPY wsgi/* /data/
+
 # Copies content of the nginx directory to /etc/nginx/sites-available
 COPY nginx/* /etc/nginx/sites-available/
 
