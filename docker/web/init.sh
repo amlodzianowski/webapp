@@ -1,0 +1,5 @@
+#!/bin/bash
+/usr/bin/sed -i "s/serverplaceholder/${UPSTREAM_HOST}/" /etc/nginx/sites-available/sites-default
+/usr/bin/sed -i "s/portplaceholder/${UPSTREAM_PORT}/" /etc/nginx/sites-available/sites-default
+/bin/echo "Hostname: $(/bin/hostname -f)" > /data/hostname;
+/usr/sbin/nginx -g 'daemon off
