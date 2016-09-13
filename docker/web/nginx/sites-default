@@ -1,5 +1,5 @@
 upstream app {
-    server app.adrian-training.aws.logicworks.net:18000;
+    server serverplaceholder:portplaceholder;
 }
 server {
         listen 80;
