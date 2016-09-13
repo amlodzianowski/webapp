@@ -17,6 +17,9 @@ COPY www/* /data/
 # Copies init script to /data
 COPY init.sh /data/init.sh
 
+# Fix perms for init scripts
+RUN chmod ugo+x /data/init.sh
+
 # Copies content of the nginx directory to /etc/nginx/sites-available
 COPY nginx/* /etc/nginx/sites-available/
 
