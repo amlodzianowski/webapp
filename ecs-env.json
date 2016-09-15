@@ -130,6 +130,7 @@
     },
     "webElb" : {
       "Type" : "AWS::ElasticLoadBalancingV2::LoadBalancer",
+      "Condition" : "CreateWebELB",
       "Properties" : {
         "Name" : "web-ecs-elb",
         "Scheme" : "internet-facing",
@@ -139,6 +140,7 @@
     },
     "webElbListener" : {
       "Type" : "AWS::ElasticLoadBalancingV2::Listener",
+      "Condition" : "CreateWebELB",
       "Properties" : {
         "Certificates" : [ {"CertificateArn" : {"Ref": "certificate"}} ],
         "DefaultActions" : [{  "TargetGroupArn" : {"Ref": "webElbTargetGroup"},"Type" : "forward"}],
@@ -149,6 +151,7 @@
     },
     "webElbTargetGroup" : {
       "Type" : "AWS::ElasticLoadBalancingV2::TargetGroup",
+      "Condition" : "CreateWebELB",
       "Properties" : {
         "Port" : {"Ref": "WebHostPort"},
         "Protocol" : "HTTP",
@@ -157,6 +160,7 @@
     },
     "elbSg"        : {
       "Type"      : "AWS::EC2::SecurityGroup",
+      "Condition" : "CreateWebELB",
       "Properties": {
         "GroupDescription"    : "[cfn] web-elb-sg",
         "VpcId"               : {"Ref": "VpcId"},
