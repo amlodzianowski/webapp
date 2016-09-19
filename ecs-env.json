@@ -172,14 +172,14 @@
     "appServiceAlb" : {
       "Type" : "AWS::ECS::Service",
       "Condition" : "CreateAppELB",
-      "DependsOn" : ["appElbListener"],
+      "DependsOn" : ["appElb"],
       "Properties" : {
         "Cluster" : {"Ref": "AppClusterId"},
         "DesiredCount" : 1,
         "LoadBalancers" : [{"Fn::If": ["CreateAppELB", {
             "ContainerName" : {"Ref": "AppContainerName"},
             "ContainerPort" : {"Ref": "AppContainerPort"},
-            "TargetGroupArn" : {"Ref": "appElbTargetGroup"}
+            "LoadBalancerName" : {"Ref": "appElb"}
         }, {"Ref": "AWS::NoValue"}]}],
         "Role" : {"Fn::If": ["CreateAppELB", {"Ref": "clusterEcsRole"}, {"Ref": "AWS::NoValue"}]},
         "TaskDefinition" : {"Ref": "appTask"}
@@ -265,7 +265,7 @@
             },
             "Type"       : "A",
             "AliasTarget": {
-              "HostedZoneId": {"Fn::GetAtt": ["appElb", "CanonicalHostedZoneID"]},
+              "HostedZoneId": {"Fn::GetAtt": ["appElb", "CanonicalHostedZoneNameID"]},
               "DNSName"     : {"Fn::GetAtt": ["appElb", "DNSName"]}
             }
           }
@@ -275,14 +275,14 @@
     "dbServiceAlb" : {
       "Type" : "AWS::ECS::Service",
       "Condition" : "CreateDbELB",
-      "DependsOn" : ["dbElbListener"],
+      "DependsOn" : ["dbElb"],
       "Properties" : {
         "Cluster" : {"Ref": "DbClusterId"},
         "DesiredCount" : 1,
         "LoadBalancers" : [{"Fn::If": ["CreateDbELB", {
             "ContainerName" : {"Ref": "DbContainerName"},
             "ContainerPort" : {"Ref": "DbContainerPort"},
-            "TargetGroupArn" : {"Ref": "dbElbTargetGroup"}
+            "LoadBalancerName" : {"Ref": "dbElb"}
         }, {"Ref": "AWS::NoValue"}]}],
         "Role" : {"Fn::If": ["CreateDbELB", {"Ref": "clusterEcsRole"}, {"Ref": "AWS::NoValue"}]},
         "TaskDefinition" : {"Ref": "dbTask"}
@@ -367,7 +367,7 @@
             },
             "Type"       : "A",
             "AliasTarget": {
-              "HostedZoneId": {"Fn::GetAtt": ["dbElb", "CanonicalHostedZoneID"]},
+              "HostedZoneId": {"Fn::GetAtt": ["dbElb", "CanonicalHostedZoneNameID"]},
               "DNSName"     : {"Fn::GetAtt": ["dbElb", "DNSName"]}
             }
           }
