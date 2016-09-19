@@ -23,7 +23,7 @@
     "AppHostPort"           : {"Type": "Number", "Default": 18000},
     "AppELBDnsName"         : {"Type": "String", "Default": "a.adrian-training.aws.logicworks.net"},
     "AppInstanceSg"         : {"Type": "String", "Default": "sg-3a8fdb5d"},
-    "DbImage"               : {"Type": "String", "Default": "amlodzianowski/db:v1"},
+    "DbImage"               : {"Type": "String", "Default": "amlodzianowski/db"},
     "DbContainerName"       : {"Type": "String", "Default": "db_container"},
     "DbContainerPort"       : {"Type": "Number", "Default": 27017},
     "DbHostPort"            : {"Type": "Number", "Default": 25000},
@@ -208,32 +208,26 @@
         }
     },
     "appElb" : {
-      "Type" : "AWS::ElasticLoadBalancingV2::LoadBalancer",
+      "Type" : "AWS::ElasticLoadBalancing::LoadBalancer",
       "Condition" : "CreateAppELB",
       "Properties" : {
-        "Name" : "app-ecs-elb",
+        "HealthCheck" : {
+           "HealthyThreshold" : "2",
+           "Interval" : "6",
+           "Target" : {"Fn::Join": ["", ["TCP:", {"Ref": "AppHostPort"}]]},
+           "Timeout" : "5",
+           "UnhealthyThreshold" : "2"
+        },
+        "Listeners" : [{
+           "InstancePort" : {"Ref": "AppHostPort"},
+           "InstanceProtocol" : "TCP",
+           "LoadBalancerPort" : {"Ref": "AppHostPort"},
+           "Protocol" : "TCP"
+        }],
+        "LoadBalancerName" : "app-ecs-elb",
         "Scheme" : "internal",
         "SecurityGroups" : [{"Ref": "appElbSg"}],
         "Subnets" : [ {"Ref": "ELBSubnetId1"}, {"Ref": "ELBSubnetId2"} ]
-      }
-    },
-    "appElbListener" : {
-      "Type" : "AWS::ElasticLoadBalancingV2::Listener",
-      "Condition" : "CreateAppELB",
-      "Properties" : {
-        "DefaultActions" : [{  "TargetGroupArn" : {"Ref": "appElbTargetGroup"},"Type" : "forward"}],
-        "LoadBalancerArn" : {"Ref": "appElb"},
-        "Port" : {"Ref": "AppHostPort"},
-        "Protocol" : "HTTP"
-      }
-    },
-    "appElbTargetGroup" : {
-      "Type" : "AWS::ElasticLoadBalancingV2::TargetGroup",
-      "Condition" : "CreateAppELB",
-      "Properties" : {
-        "Port" : {"Ref": "AppHostPort"},
-        "Protocol" : "HTTP",
-        "VpcId" : {"Ref": "VpcId"}
       }
     },
     "appElbSg"        : {
@@ -316,32 +310,26 @@
         }
     },
     "dbElb" : {
-      "Type" : "AWS::ElasticLoadBalancingV2::LoadBalancer",
+      "Type" : "AWS::ElasticLoadBalancing::LoadBalancer",
       "Condition" : "CreateDbELB",
       "Properties" : {
-        "Name" : "db-ecs-elb",
+        "HealthCheck" : {
+           "HealthyThreshold" : "2",
+           "Interval" : "6",
+           "Target" : {"Fn::Join": ["", ["TCP:", {"Ref": "DbHostPort"}]]},
+           "Timeout" : "5",
+           "UnhealthyThreshold" : "2"
+        },
+        "Listeners" : [{
+           "InstancePort" : {"Ref": "DbHostPort"},
+           "InstanceProtocol" : "TCP",
+           "LoadBalancerPort" : {"Ref": "DbHostPort"},
+           "Protocol" : "TCP"
+        }],
+        "LoadBalancerName" : "db-ecs-elb",
         "Scheme" : "internal",
         "SecurityGroups" : [{"Ref": "dbElbSg"}],
         "Subnets" : [ {"Ref": "ELBSubnetId1"}, {"Ref": "ELBSubnetId2"} ]
-      }
-    },
-    "dbElbListener" : {
-      "Type" : "AWS::ElasticLoadBalancingV2::Listener",
-      "Condition" : "CreateDbELB",
-      "Properties" : {
-        "DefaultActions" : [{  "TargetGroupArn" : {"Ref": "dbElbTargetGroup"},"Type" : "forward"}],
-        "LoadBalancerArn" : {"Ref": "dbElb"},
-        "Port" : {"Ref": "DbHostPort"},
-        "Protocol" : "HTTP"
-      }
-    },
-    "dbElbTargetGroup" : {
-      "Type" : "AWS::ElasticLoadBalancingV2::TargetGroup",
-      "Condition" : "CreateDbELB",
-      "Properties" : {
-        "Port" : {"Ref": "DbHostPort"},
-        "Protocol" : "HTTP",
-        "VpcId" : {"Ref": "VpcId"}
       }
     },
     "dbElbSg"        : {
