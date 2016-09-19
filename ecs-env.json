@@ -2,56 +2,11 @@
   "Description"             : "Stack consisting of 3 ECS services and optional application load balancers",
   "AWSTemplateFormatVersion": "2010-09-09",
   "Parameters"              : {
-    "Az1Id"                 : {"Type": "String", "Default": "us-west-2a", "Description": "Name of Az1"},
-    "Az2Id"                 : {"Type": "String", "Default": "us-west-2b", "Description": "Name of Az2"},
-    "BucketName"            : {"Type": "String", "Default": "svg-cfn"},
-    "DefaultKeyPair"        : {"Type": "String", "Default": "lw-svg"},
-    "DeployKey"             : {
-      "Type"   : "String",
-      "Default": "LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb2dJQkFBS0NBUUVBMDJ2THhtcXZ6UXV0MUJNbTlKMUhpaGdMQ2FJOHY2UERKdk1WSEFDbG9PL0pGeW9tCjFIWGwwZXp3dmlWcmppQ25laFgwU2ZOTHlVby9lQUdGWXMrUjhYdE4waGt0UXFBaUtwbmxuQXZQUllqdll6dkgKZDNrUDJaZmtQRG1tcjlVQTBzcE1ic0xpWlAxOXIzYlE0SVJlZklhRnlTTG1zRDVOK0RSamdRaGFxSUVFOGZxYwp5bEdZa3hKdVU5ZU1TVWViMWRDWnhSRy9NRWd4TTMwWlY0a1JPSkV1eE1YM2U0ME91ZndsSis0ek0vZElqbjFrCkFaRmtLbitDL2JHWVgrK095S2RQZGFieTQzNWZ3a3NISDV5M0tCeURJOXJPelNBUFIvZ0JpNFI1MVRISUxTRVoKc1VQMDZEZkFTYlNVMnhIak9CQ0VIMjFtTVB0Y2lVUDFHamJxMlFJQkl3S0NBUUEyWFl3cnRRaWljTGVyaitWeQpHZENST1dIc2lNM0s0UGVxN2d5K0RzdUJKN2RkdW1IQm1xalBsTEx2RU8vRmRoeHYyY0o1YW5LUzJKUDZTWWl6CkFpelhzZjRSZERBMXRDWUs5RitkSjV1eXkzREJ2dW9tQ1MvMkg3NVlvUnc3MTYvQkxMU1JncEg4dGpaREQreVIKZ1IrY1hSc1dkckJaTkplMDJrVjQ4NFVHd1o4ci9ndEJUK1ZUNENtdC9aZlpaa0RlZGpNeUM4Z3RkK05NaU1wZQpKck9BbG56WVFoOERsV3ViRURzQUhrbko1MXJiKzdzVWsrYU54KzZ0YVJDdkhZMFRKbjdNbjRxZ1h1d0ZUWFh4ClFjdHNyaDQrL3RZNHFPMHBFTmJmLzd4MkV5ejVtVHd5Y3o0dllCTUlYSUVUcURoM3hQL3RMVE5DMkdJZk02a2kKMFZZTEFvR0JBUHhmYmE2Kzgrd24yNG5kWURMcEZGWGRjeTJQaTUzMlJzL3ZzQ3JGV1NaZk5PWmlUeVltVVJrbgorOWZhRkIvMTRtR3VpUlJDdStFTjFpZ0NrWE10eVJiemM3VlVLazZ1cktWTVlUV0t3ZDJUZmZPNUdYTG9xbTFyClpGVDNaTjJISXI5dk16UjNZQXdOaWM0TVRqclF5QUJSU1Rpd0srdXg0QnJDMEVXdGNVSXhBb0dCQU5aMXNQc3AKMGFKZDY1ZTFaRU85Ykx0NnlxVWRrVE16MmREaFJ6RHJKNktQOXB2RUlGaTVFMU1haUV0cDFoQzdIMmtXcjVTbgpzc21mOVN5UnBBRENDT0Z1U0pDVDg4SCtDMEVMOVhpeHZvbVlwQm5MR3pkQkFTUUQvTnE3UFJTN3hIWkltZnNnClhLR3dxaG9BY0dRVExYa1ZBaExVNXdoN0p4bUdBQjJzZXlFcEFvR0JBS1hZVDJRMFZ5WW8waGpFck81QlpTSjcKbE5UTUMwcUw1V1FTaWJXMDR0QVNyYnYzZGRjOXdFTzdNSGZuRklvSCt5by9mcWJxQm05U1BFWXRrc2dJSlE4VgpBdVRmaVlRcHBLY2prRlppZjJXNHNkcXMxaldSbEpFTURydCtBSFJSZlR2NG5mM29DK3FwejVZSUZpYW1kTTBDCk4yNWxKQzBydnllSFZhb2hoUEQ3QW9HQkFLVnd1N3B3dDZrajRhRHJCRFJCcTZhUjdNaUVoZlJNa2hZcUlQbloKK2dFUCtNRk9KNVRtaTBBYnlEb3RFdG0wN0ZoaDlTbUlybjVJTWlteUxnODJtU0x1clFIUk9HSnpoUVpMRGRJaQp0NDYzbElqdEk1K25MTVFERTRRcUNveFdWYnBWUTVYWEl1TWg0azZTbjlnc0RTTGtVZzZHKzE1UVgvMi9KS2t0ClNRcnpBb0dBRnNscEpvaGtjcmlKQ1FETlp0NmFzejRIYXFNcG5WdVAxMnB5dmRmNjNHbDRVS2cvQ2VsSWRYa0kKRm0wY2VhZ09lVVZSdjRPc0FpRFlTbFFrTFgxZmExbE53WGlnc3JNQU5vUThSMWNOMVRoRld4cEF5eGVWRy9ZQwpIU1p4UU1WNTBUZHBLUjhKNVp0SDFLd25SdTlTYzdrNmQ0LzRCTW9nd2h5ZWdFdERqaGs9Ci0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0tCg=="
-    },
-    "DhcpDomainName"        : {"Default": "", "Description": "The domain to configure for this network.", "Type": "String"},
-    "DhcpNetbios"           : {"Type": "String", "Default": ""},
-    "DhcpNs1"               : {"Type": "String", "Default": "AmazonProvidedDNS"},
-    "DhcpNs2"               : {"Type": "String", "Default": ""},
-    "DhcpNtp"               : {"Type": "String", "Default": ""},
-    "ExternalDNSZone"       : {"Type": "String", "Default": "svg.aws.logicworks.net"},
-    "GatewayAccessCidr1"    : {"Type": "String", "Default": "206.252.134.18/32"},
-    "GatewayAccessCidr2"    : {"Type": "String", "Default": "209.81.79.16/32"},
-    "GatewayAccessCidr3"    : {"Type": "String", "Default": "206.252.134.3/32"},
-    "GatewayAccessCidr4"    : {"Default": "", "Description": "The IP from which you'll administer the NAT gateway.", "Type": "String"},
-    "InternalDNSZone"       : {"Type": "String", "Default": "corp.springventuregroup.com"},
-    "LibraryBranch"         : {"Type": "String", "Default": "feature/0.1.18"},
-    "ManagementPublicKey"   : {
-      "Type"   : "String",
-      "Default": "ssh-dss AAAAB3NzaC1kc3MAAACBAKrOf+aK/mZRe/TWaovHZvl3JtH1gC7DZn2O7aSjNqIviAdreZuzIDqq+mKOuJck+/zllx8eeNu5UlesR3IFezNRd9RkQXcSQe5K5nRvO++mCexPzjJrlWmFGc23NcmenchWVNg1cDHxQIBrsE7dcRdfXa8hW6THV0IeYAwTkAtLAAAAFQC7ThNKzD0o4vlvArO2JI8dS2wMvwAAAIAeamD3flIglbZeYVre1BPD9GyW7oUJr7yR7Gt0OtFe6aPK5DNzdt1fxlq1Q7zNjb71vb09cQxqrTeSfzp0UacXGMwLx5Oi34nGiOL6zaNZf8gMU2HqqeCJL1OISZ0B8BV4YSNjHPw4pZgJ8kkmOfJNNQDjsnVvZU1cQr9Xv1pqmwAAAIBnOj6bRvPuWkDcTYTqXmrCUzpx3U3lpFS65Ui/VdozlsRyuTuwjpdWDi2Tw3MjK0tDbGBhDc5z98/bKHJijaiczVx1lj2nsz7eAXZhfl3VARGOS3h0ty3pshLPGNED3LptzBlDXRtL1YqCrX2V+BM1Gy8kWD6TN07ypW0MJ/wKCg== root@dosas"
-    },
-    "NetworkAclId"          : {"Type": "String", "Default": "acl-b94998dd", "Description": "Network ACL ID"},
-    "PrivateRoutingTableAz1": {"Type": "String", "Default": "rtb-a643e1c2", "Description": "Private Routing Table ID in Az1"},
-    "PrivateRoutingTableAz2": {"Type": "String", "Default": "rtb-db43e1bf", "Description": "Private Routing Table ID in Az2"},
-    "PublicGatewayId"       : {"Type": "String", "Default": "igw-c84066ad", "Description": "IGW"},
-    "PublicRoutingTable"    : {"Type": "String", "Default": "rtb-da43e1be", "Description": "Public Routing Table ID"},
-    "PuppetAwsBranch"       : {"Type": "String", "Default": "master"},
-    "Subnet1Az1SubnetId"    : {"Type": "String", "Default": "subnet-fc8d4798", "Description": "Subnet 1 Az1 subnet ID"},
-    "Subnet1Az2SubnetId"    : {"Type": "String", "Default": "subnet-5a957a2c", "Description": "Subnet 1 Az2 subnet ID"},
-    "Subnet1SubnetIds"      : {"Type": "String", "Default": "subnet-fc8d4798,subnet-5a957a2c", "Description": "Subnet 1 Subnet IDs"},
-    "Subnet2Az1SubnetId"    : {"Type": "String", "Default": "subnet-f38d4797", "Description": "Subnet 2 Az1 subnet ID"},
-    "Subnet2Az2SubnetId"    : {"Type": "String", "Default": "subnet-5c957a2a", "Description": "Subnet 2 Az2 subnet ID"},
-    "Subnet2SubnetIds"      : {"Type": "String", "Default": "subnet-f38d4797,subnet-5c957a2a", "Description": "Subnet 2 Subnet IDs"},
-    "Subnet3Az1SubnetId"    : {"Type": "String", "Default": "subnet-f78d4793", "Description": "Subnet 3 Az1 subnet ID"},
-    "Subnet3Az2SubnetId"    : {"Type": "String", "Default": "subnet-5f957a29", "Description": "Subnet 3 Az2 subnet ID"},
-    "Subnet3SubnetIds"      : {"Type": "String", "Default": "subnet-f78d4793,subnet-5f957a29", "Description": "Subnet 3 Subnet IDs"},
-    "Subnet4Az1SubnetId"    : {"Type": "String", "Default": "subnet-f18d4795", "Description": "Subnet 4 Az1 subnet ID"},
-    "Subnet4Az2SubnetId"    : {"Type": "String", "Default": "subnet-51957a27", "Description": "Subnet 4 Az2 subnet ID"},
-    "Subnet4SubnetIds"      : {"Type": "String", "Default": "subnet-f18d4795,subnet-51957a27", "Description": "Subnet 4 Subnet IDs"},
-    "Subnet5Az1SubnetId"    : {"Type": "String", "Default": "subnet-fe8d479a", "Description": "Subnet 5 Az1 subnet ID"},
-    "Subnet5Az2SubnetId"    : {"Type": "String", "Default": "subnet-5e957a28", "Description": "Subnet 5 Az2 subnet ID"},
-    "Subnet5SubnetIds"      : {"Type": "String", "Default": "subnet-fe8d479a,subnet-5e957a28", "Description": "Subnet 5 Subnet IDs"},
-    "VpcCidr"               : {"Type": "String", "Default": "10.252.4.0/22", "Description": "VPC supernet"},
     "VpcId"                 : {"Type": "String", "Default": "vpc-f7031f92", "Description": "VPC container ID"},
     "WebClusterId"          : {"Type": "String", "Default": "mgmt-web"},
     "AppClusterId"          : {"Type": "String", "Default": "mgmt-app"},
     "DbClusterId"           : {"Type": "String", "Default": "mgmt-mongo"},
+    "HostedZone"            : {"Type": "String", "Default": "adrian-training.aws.logicworks.net"},
     "WebUpsteamHost"        : {"Type": "String", "Default": "a.adrian-training.aws.logicworks.net"},
     "WebUpsteamPort"        : {"Type": "String", "Default": "18000"},
     "WebImage"              : {"Type": "String", "Default": "amlodzianowski/web:v1"},
@@ -60,16 +15,30 @@
     "WebHostPort"           : {"Type": "Number", "Default": 8000},
     "WebELBDnsName"         : {"Type": "String", "Default": "w.adrian-training.aws.logicworks.net"},
     "WebInstanceSg"         : {"Type": "String", "Default": "sg-d48edab3"},
-    "CreateAppELB"          : {"Default": "true","AllowedValues": ["true", "false"],"Type": "String"},
-    "CreateDbELB"           : {"Default": "true","AllowedValues": ["true", "false"],"Type": "String"},
+    "AppUpsteamHost"        : {"Type": "String", "Default": "db.adrian-training.aws.logicworks.net"},
+    "AppUpsteamPort"        : {"Type": "String", "Default": "25000"},
+    "AppImage"              : {"Type": "String", "Default": "amlodzianowski/app:v1"},
+    "AppContainerName"      : {"Type": "String", "Default": "app_container"},
+    "AppContainerPort"      : {"Type": "Number", "Default": 8000},
+    "AppHostPort"           : {"Type": "Number", "Default": 18000},
+    "AppELBDnsName"         : {"Type": "String", "Default": "a.adrian-training.aws.logicworks.net"},
+    "AppInstanceSg"         : {"Type": "String", "Default": "sg-3a8fdb5d"},
+    "DbImage"               : {"Type": "String", "Default": "amlodzianowski/db:v1"},
+    "DbContainerName"       : {"Type": "String", "Default": "db_container"},
+    "DbContainerPort"       : {"Type": "Number", "Default": 27017},
+    "DbHostPort"            : {"Type": "Number", "Default": 25000},
+    "DbELBDnsName"          : {"Type": "String", "Default": "db.adrian-training.aws.logicworks.net"},
+    "DbInstanceSg"          : {"Type": "String", "Default": "sg-f48fdb93"},
     "ELBSubnetId1"          : {"Type": "String", "Default": "subnet-9b999dc2"},
     "ELBSubnetId2"          : {"Type": "String", "Default": "subnet-73fb3c17"}
   },
   "Conditions"              : {
-     "CreateWebELB"  : {"Fn::Not": [{"Fn::Equals": [{"Ref": "WebELBDnsName"}, "nil"]}]},
-     "CreateWebService"  : {"Fn::Equals": [{"Ref": "WebELBDnsName"}, "nil"]},
-     "CreateAppELB"  : {"Fn::Equals": [{"Ref": "CreateAppELB"}, "true"]},
-     "CreateDbELB"   : {"Fn::Equals": [{"Ref": "CreateDbELB"}, "true"]}
+     "CreateWebELB"        : {"Fn::Not": [{"Fn::Equals": [{"Ref": "WebELBDnsName"}, "nil"]}]},
+     "CreateWebServiceOnly": {"Fn::Equals": [{"Ref": "WebELBDnsName"}, "nil"]},
+     "CreateAppELB"        : {"Fn::Not": [{"Fn::Equals": [{"Ref": "AppELBDnsName"}, "nil"]}]},
+     "CreateAppServiceOnly": {"Fn::Equals": [{"Ref": "AppELBDnsName"}, "nil"]},
+     "CreateDbELB"         : {"Fn::Not": [{"Fn::Equals": [{"Ref": "DbELBDnsName"}, "nil"]}]},
+     "CreateDbServiceOnly" : {"Fn::Equals": [{"Ref": "DbELBDnsName"}, "nil"]}
   },
   "Resources"               : {
     "clusterEcsRole"       : {
@@ -101,7 +70,7 @@
     },
     "webService" : {
       "Type" : "AWS::ECS::Service",
-      "Condition" : "CreateWebService",
+      "Condition" : "CreateWebServiceOnly",
       "Properties" : {
         "Cluster" : {"Ref": "WebClusterId"},
         "DesiredCount" : 1,
@@ -134,7 +103,7 @@
       "Properties" : {
         "Name" : "web-ecs-elb",
         "Scheme" : "internet-facing",
-        "SecurityGroups" : [{"Ref": "elbSg"}],
+        "SecurityGroups" : [{"Ref": "webElbSg"}],
         "Subnets" : [ {"Ref": "ELBSubnetId1"}, {"Ref": "ELBSubnetId2"} ]
       }
     },
@@ -158,15 +127,263 @@
         "VpcId" : {"Ref": "VpcId"}
       }
     },
-    "elbSg"        : {
+    "webElbRecordSetGroup": {
+      "Type"      : "AWS::Route53::RecordSetGroup",
+      "Condition" : "CreateWebELB",
+      "DependsOn" : ["webElb"],
+      "Properties": {
+        "HostedZoneName": {"Fn::Join": ["", [{"Ref": "HostedZone"}, "."]]},
+        "RecordSets"    : [
+          {
+            "Name"       : {
+              "Fn::Join": ["", [{"Ref": "WebELBDnsName"}, "."]]
+            },
+            "Type"       : "A",
+            "AliasTarget": {
+              "HostedZoneId": {"Fn::GetAtt": ["webElb", "CanonicalHostedZoneID"]},
+              "DNSName"     : {"Fn::GetAtt": ["webElb", "DNSName"]}
+            }
+          }
+        ]
+      }
+    },
+    "webElbSg"        : {
       "Type"      : "AWS::EC2::SecurityGroup",
       "Condition" : "CreateWebELB",
       "Properties": {
         "GroupDescription"    : "[cfn] web-elb-sg",
         "VpcId"               : {"Ref": "VpcId"},
-        "SecurityGroupIngress": [
-          {"IpProtocol": "tcp", "FromPort": {"Ref": "WebHostPort"}, "ToPort": {"Ref": "WebHostPort"}, "CidrIp": "0.0.0.0/0"}],
+        "SecurityGroupIngress": [{"IpProtocol": "tcp", "FromPort": "443", "ToPort": "443", "CidrIp": "0.0.0.0/0"}],
         "Tags"                : [{"Key": "Name", "Value": "web-elb-sg"}]
+      }
+    },
+    "webInstanceSgRule"     : {
+      "Type"      : "AWS::EC2::SecurityGroupIngress",
+      "Condition" : "CreateWebELB",
+      "DependsOn": ["webElbSg"],
+      "Properties": {
+                "GroupId": {"Ref": "WebInstanceSg"},
+                "IpProtocol": "tcp",
+                "FromPort": {"Ref": "WebHostPort"},
+                "ToPort": {"Ref": "WebHostPort"},
+                "SourceSecurityGroupId": {"Ref": "webElbSg"}
+            }
+    },
+    "appServiceAlb" : {
+      "Type" : "AWS::ECS::Service",
+      "Condition" : "CreateAppELB",
+      "DependsOn" : ["appElbListener"],
+      "Properties" : {
+        "Cluster" : {"Ref": "AppClusterId"},
+        "DesiredCount" : 1,
+        "LoadBalancers" : [{"Fn::If": ["CreateAppELB", {
+            "ContainerName" : {"Ref": "AppContainerName"},
+            "ContainerPort" : {"Ref": "AppContainerPort"},
+            "TargetGroupArn" : {"Ref": "appElbTargetGroup"}
+        }, {"Ref": "AWS::NoValue"}]}],
+        "Role" : {"Fn::If": ["CreateAppELB", {"Ref": "clusterEcsRole"}, {"Ref": "AWS::NoValue"}]},
+        "TaskDefinition" : {"Ref": "appTask"}
+      }
+    },
+    "appService" : {
+      "Type" : "AWS::ECS::Service",
+      "Condition" : "CreateAppServiceOnly",
+      "Properties" : {
+        "Cluster" : {"Ref": "AppClusterId"},
+        "DesiredCount" : 1,
+        "TaskDefinition" : {"Ref": "appTask"}
+      }
+    },
+    "appTask" : {
+      "Type" : "AWS::ECS::TaskDefinition",
+        "Properties" : {
+          "ContainerDefinitions" : [ {
+            "Command"    : ["/usr/local/bin/uwsgi", "--socket", ":8000", "--wsgi-file", "/data/wsgi.py"],
+            "Environment": [{"Name" : "UPSTREAM_PORT","Value" : {"Ref": "AppUpsteamPort"} }, {"Name" : "UPSTREAM_HOST","Value" : {"Ref": "AppUpsteamHost"} }],
+            "Image"      : {"Ref": "AppImage"},
+            "Memory"     : 128,
+            "Name"       : {"Ref": "AppContainerName"},
+            "PortMappings" : [{"ContainerPort" : {"Ref": "AppContainerPort"},"HostPort":{"Ref": "AppHostPort"}}]
+            } ]
+        }
+    },
+    "appElb" : {
+      "Type" : "AWS::ElasticLoadBalancingV2::LoadBalancer",
+      "Condition" : "CreateAppELB",
+      "Properties" : {
+        "Name" : "app-ecs-elb",
+        "Scheme" : "internal",
+        "SecurityGroups" : [{"Ref": "appElbSg"}],
+        "Subnets" : [ {"Ref": "ELBSubnetId1"}, {"Ref": "ELBSubnetId2"} ]
+      }
+    },
+    "appElbListener" : {
+      "Type" : "AWS::ElasticLoadBalancingV2::Listener",
+      "Condition" : "CreateAppELB",
+      "Properties" : {
+        "DefaultActions" : [{  "TargetGroupArn" : {"Ref": "appElbTargetGroup"},"Type" : "forward"}],
+        "LoadBalancerArn" : {"Ref": "appElb"},
+        "Port" : {"Ref": "AppHostPort"},
+        "Protocol" : "HTTP"
+      }
+    },
+    "appElbTargetGroup" : {
+      "Type" : "AWS::ElasticLoadBalancingV2::TargetGroup",
+      "Condition" : "CreateAppELB",
+      "Properties" : {
+        "Port" : {"Ref": "AppHostPort"},
+        "Protocol" : "HTTP",
+        "VpcId" : {"Ref": "VpcId"}
+      }
+    },
+    "appElbSg"        : {
+      "Type"      : "AWS::EC2::SecurityGroup",
+      "Condition" : "CreateAppELB",
+      "Properties": {
+        "GroupDescription"    : "[cfn] app-elb-sg",
+        "VpcId"               : {"Ref": "VpcId"},
+        "SecurityGroupIngress": [{"IpProtocol": "tcp", "FromPort": {"Ref": "AppHostPort"}, "ToPort": {"Ref": "AppHostPort"}, "SourceSecurityGroupId": {"Ref": "WebInstanceSg"}}],
+        "Tags"                : [{"Key": "Name", "Value": "app-elb-sg"}]
+      }
+    },
+    "appInstanceSgRule"     : {
+      "Type"      : "AWS::EC2::SecurityGroupIngress",
+      "Condition" : "CreateAppELB",
+      "DependsOn": ["appElbSg"],
+      "Properties": {
+                "GroupId": {"Ref": "AppInstanceSg"},
+                "IpProtocol": "tcp",
+                "FromPort": {"Ref": "AppHostPort"},
+                "ToPort": {"Ref": "AppHostPort"},
+                "SourceSecurityGroupId": {"Ref": "appElbSg"}
+            }
+    },
+    "appElbRecordSetGroup": {
+      "Type"      : "AWS::Route53::RecordSetGroup",
+      "Condition" : "CreateAppELB",
+      "DependsOn" : ["appElb"],
+      "Properties": {
+        "HostedZoneName": {"Fn::Join": ["", [{"Ref": "HostedZone"}, "."]]},
+        "RecordSets"    : [
+          {
+            "Name"       : {
+              "Fn::Join": ["", [{"Ref": "AppELBDnsName"}, "."]]
+            },
+            "Type"       : "A",
+            "AliasTarget": {
+              "HostedZoneId": {"Fn::GetAtt": ["appElb", "CanonicalHostedZoneID"]},
+              "DNSName"     : {"Fn::GetAtt": ["appElb", "DNSName"]}
+            }
+          }
+        ]
+      }
+    },
+    "dbServiceAlb" : {
+      "Type" : "AWS::ECS::Service",
+      "Condition" : "CreateDbELB",
+      "DependsOn" : ["dbElbListener"],
+      "Properties" : {
+        "Cluster" : {"Ref": "DbClusterId"},
+        "DesiredCount" : 1,
+        "LoadBalancers" : [{"Fn::If": ["CreateDbELB", {
+            "ContainerName" : {"Ref": "DbContainerName"},
+            "ContainerPort" : {"Ref": "DbContainerPort"},
+            "TargetGroupArn" : {"Ref": "dbElbTargetGroup"}
+        }, {"Ref": "AWS::NoValue"}]}],
+        "Role" : {"Fn::If": ["CreateDbELB", {"Ref": "clusterEcsRole"}, {"Ref": "AWS::NoValue"}]},
+        "TaskDefinition" : {"Ref": "dbTask"}
+      }
+    },
+    "dbService" : {
+      "Type" : "AWS::ECS::Service",
+      "Condition" : "CreateDbServiceOnly",
+      "Properties" : {
+        "Cluster" : {"Ref": "DbClusterId"},
+        "DesiredCount" : 1,
+        "TaskDefinition" : {"Ref": "dbTask"}
+      }
+    },
+    "dbTask" : {
+      "Type" : "AWS::ECS::TaskDefinition",
+        "Properties" : {
+          "ContainerDefinitions" : [ {
+            "Command"    : ["/usr/bin/mongod", "--dbpath=/var/lib/mongodb"],
+            "Image"      : {"Ref": "DbImage"},
+            "Memory"     : 128,
+            "Name"       : {"Ref": "DbContainerName"},
+            "PortMappings" : [{"ContainerPort" : {"Ref": "DbContainerPort"},"HostPort":{"Ref": "DbHostPort"}}]
+            } ]
+        }
+    },
+    "dbElb" : {
+      "Type" : "AWS::ElasticLoadBalancingV2::LoadBalancer",
+      "Condition" : "CreateDbELB",
+      "Properties" : {
+        "Name" : "db-ecs-elb",
+        "Scheme" : "internal",
+        "SecurityGroups" : [{"Ref": "dbElbSg"}],
+        "Subnets" : [ {"Ref": "ELBSubnetId1"}, {"Ref": "ELBSubnetId2"} ]
+      }
+    },
+    "dbElbListener" : {
+      "Type" : "AWS::ElasticLoadBalancingV2::Listener",
+      "Condition" : "CreateDbELB",
+      "Properties" : {
+        "DefaultActions" : [{  "TargetGroupArn" : {"Ref": "dbElbTargetGroup"},"Type" : "forward"}],
+        "LoadBalancerArn" : {"Ref": "dbElb"},
+        "Port" : {"Ref": "DbHostPort"},
+        "Protocol" : "HTTP"
+      }
+    },
+    "dbElbTargetGroup" : {
+      "Type" : "AWS::ElasticLoadBalancingV2::TargetGroup",
+      "Condition" : "CreateDbELB",
+      "Properties" : {
+        "Port" : {"Ref": "DbHostPort"},
+        "Protocol" : "HTTP",
+        "VpcId" : {"Ref": "VpcId"}
+      }
+    },
+    "dbElbSg"        : {
+      "Type"      : "AWS::EC2::SecurityGroup",
+      "Condition" : "CreateDbELB",
+      "Properties": {
+        "GroupDescription"    : "[cfn] db-elb-sg",
+        "VpcId"               : {"Ref": "VpcId"},
+        "SecurityGroupIngress": [{"IpProtocol": "tcp", "FromPort": {"Ref": "DbHostPort"}, "ToPort": {"Ref": "DbHostPort"}, "SourceSecurityGroupId": {"Ref": "AppInstanceSg"}}],
+        "Tags"                : [{"Key": "Name", "Value": "db-elb-sg"}]
+      }
+    },
+    "dbInstanceSgRule"     : {
+      "Type"      : "AWS::EC2::SecurityGroupIngress",
+      "Condition" : "CreateDbELB",
+      "DependsOn": ["dbElbSg"],
+      "Properties": {
+                "GroupId": {"Ref": "DbInstanceSg"},
+                "IpProtocol": "tcp",
+                "FromPort": {"Ref": "DbHostPort"},
+                "ToPort": {"Ref": "DbHostPort"},
+                "SourceSecurityGroupId": {"Ref": "dbElbSg"}
+            }
+    },
+    "dbElbRecordSetGroup": {
+      "Type"      : "AWS::Route53::RecordSetGroup",
+      "Condition" : "CreateDbELB",
+      "DependsOn" : ["dbElb"],
+      "Properties": {
+        "HostedZoneName": {"Fn::Join": ["", [{"Ref": "HostedZone"}, "."]]},
+        "RecordSets"    : [
+          {
+            "Name"       : {
+              "Fn::Join": ["", [{"Ref": "DbELBDnsName"}, "."]]
+            },
+            "Type"       : "A",
+            "AliasTarget": {
+              "HostedZoneId": {"Fn::GetAtt": ["dbElb", "CanonicalHostedZoneID"]},
+              "DNSName"     : {"Fn::GetAtt": ["dbElb", "DNSName"]}
+            }
+          }
+        ]
       }
     }
   }
