@@ -1,0 +1,18 @@
+<head>
+<link rel="import" href="youtube">
+<link rel="import" href="hostname">
+<link rel="stylesheet" type="text/css" href="style.css" title="style">
+<script src="jquery.js"></script>
+    <script>
+    $(function(){
+      $("#includedContentHostname").load("hostname");
+      $("#includedContent").load("youtube");
+    });
+    </script>
+</head>
+<body>
+<h1>Web demo</h1>
+<div id="includedContent"></div>
+<br>
+<div id="includedContentHostname"></div>
+</body>

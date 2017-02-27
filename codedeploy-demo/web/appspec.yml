@@ -1,0 +1,17 @@
+version: 0.0
+os: linux
+files:
+  - source: nginx
+    destination: /etc/nginx/sites-available
+  - source: www
+    destination: /data
+hooks:
+  ApplicationStop:
+    - location: scripts/stop.sh
+  BeforeInstall:
+    - location: scripts/packages.sh
+  AfterInstall:
+    - location: scripts/symlink.sh
+  ApplicationStart:
+    - location: scripts/start.sh
+      timeout: 10
